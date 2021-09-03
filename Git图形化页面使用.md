@@ -190,5 +190,148 @@ git remote add 别名 远程地址
 12. git push 别名 master       提交到Github
 13. 唤醒一个登录的小页面，则说明上传成功就在眼前
 
+## 拉取远程库到本地库
 
+```
+在Github上修改文件，并提交。
+git pull 别名 master     从别名拉取到master分支上
+cat 文件名				  可看到从Github上修改后痕迹	
+```
+
+
+
+## 克隆远程库到本地
+
+```
+git clone 		远程地址（http.git网址）
+ll         		查看需要进入的文件名
+cd 				文件名/
+git remote -v   查看别名(链接前面的别名为origin)
+
+
+clone 会做如下操作：
+拉取代码。
+初始化本地仓库。
+创建别名。
+```
+
+
+
+## 团队内协作
+
+1. ==选择邀请合作者：Settings->Mange access invit==
+2. ==复制邀请的网址==
+3. ==目标合作者接收到网址，用浏览器打开它，点击接受邀请。==
+4. ==接受邀请成功之后，可以在目标合作者Github账号上看到将来共同开发远程仓库。==
+5. ==标合作者可以修改内容并 push 到远程仓库。==
+6. ==回到发送合作邀请者的 GitHub 远程仓库中可以看到，最后一次是目标合作者提交的。==
+
+
+
+## 跨团队协作
+
+一、将远程仓库的地址复制发给邀请跨团队协作的人，比如Others。
+
+二、在Others的 GitHub 账号里的地址栏复制收到的链接，然后点击 网页右上方的Fork按钮，将项目叉到自己的本地仓库。
+
+​		叉成功后可以看到当前仓库信息。
+
+三、Others就可以在线编辑叉取过来的文件。
+
+四、Others编辑完毕后，填写描述信息并点击左下角绿色按钮提交。
+
+五、接下来点击上方的 Pull 请求，并创建一个新的请求。
+
+六、回到My GitHub 账号可以看到有一个 Pull request 请求
+
+​		进入到聊天室，可以讨论代码相关内容。
+
+​		点击Others描述信息即可查看源代码
+
+七、如果代码没有问题，可以点击 Merge pull reque 合并代码。
+
+​		下面可以填写对合并代码的描述，团队内可以看到
+
+​		再次确认提交
+
+
+
+## SSH免密登录
+
+github->code->ssh下面有：
+
+```
+You don't have any public SSH keys in your GitHub account. You can [add a new public key](https://github.com/settings/ssh/new), or try cloning this repository via HTTPS.
+```
+
+1. 先到用户的主页目录，删除.ssh文件夹（如果没有.ssh文件夹，忽略此步）
+2. ssh-keygen -t rsa -C  Chang1047.com(邮箱地址)
+3. 然后按三次回车，生成一个私钥和公钥
+4. 把公钥内的内容复制到github账号->settings->ssh and gpg->ssh keys->add  new ->复制到key中
+5. 若出现一个钥匙形状的图案，则添加成功！
+6. 刷新，ssh下方出现git@github.com:Chang1047/gitdetails.git，则成功！
+
+
+
+# Idea忽略.idea之类的文件
+
+在idea内
+
+Settings->Editor->File Type->Ignored Files and Folders->添加要忽略的文件即可
+
+不需要那么麻烦，so easy！
+
+
+
+# IDEA集成GitHub
+
+## 设置GitHub账号
+
+Setting->Version Control->GitHub->add account 自动跳转页面，添加成功！
+
+
+
+## 分享项目到GitHub
+
+VCS->ShareProject Github->使用token登录，点击Generate，到Github复制token粘贴过来即可->Share
+
+
+
+## 推送代码到远程库
+
+Git->commit(起个名字)
+
+在Github远程库中复制ssh的git网址
+
+Git->Push->origin->Define remote->添加刚才复制的网址(给Name去个名字)->ok->选中刚才起的名字->Push
+
+## 拉取远程库代码合并本地库
+
+修改远程库的代码
+
+Git->pull->选择ssh网址的名字->ok
+
+
+
+## 克隆代码到本地
+
+在菜单栏的File->Close Project->Get From VCS->选择git，复制远程库的git网址，选择文件放的位置
+
+
+
+# Gitee码云的使用
+
+码云是开源中国推出的基于 Git 的代码托管服务中心， 
+
+```
+网址是 https://gitee.com
+```
+
+使用方式跟 GitHub 一样，而且它还是一个中文网站。
+
+
+
+# Gitee导入Github文件
+
+用户名旁边的+->新建仓库->右上角有一个导入->复制github的http网址
 
